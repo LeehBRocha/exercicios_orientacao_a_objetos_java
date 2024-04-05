@@ -9,10 +9,11 @@ public class Elevador {
     private int desligado;
 
 
-    public Elevador(int quantidadeAndares, int capacidade, int ligado){
+    public Elevador(int quantidadeAndares, int capacidade){
         this.quantidadeAndares = quantidadeAndares;
         this.capacidade = capacidade;
-        this.ligado = ligado;
+        this.ligado = 0;
+        this.desligado = 1;
         this.pessoas = 0;
         this.andar = 0;
     }
@@ -57,6 +58,15 @@ public class Elevador {
         this.pessoas = pessoas;
     }  
 
+    public int getDesligado() {
+        return desligado;
+    }
+
+    public void setDesligado(int
+     desligado) {
+        this.desligado = desligado;
+    }
+
     public void entrar(){
         int acrescentar = 0;
         if(this.pessoas <= this.capacidade){
@@ -84,33 +94,22 @@ public class Elevador {
         }
     }
 
-    public int ligado(){
-        if (this.ligado == 1){
-            return 1;
+    public void ligado(){
+        if (this.desligado == 0){
+            setLigado(1);
         }
-        return 0;
     }
-    public int desligado(int desligado){
-        if (this.desligado == 1){
-            setLigado(0);
+
+    public String desligado(){
+        if (this.ligado == 0){
+            this.ligado = 0;
+            this.desligado = 1;
+            return "\nElevador desligado";
         }
-        return this.ligado = 1;
+        return "\nElevador já estava desligado";
     }
 
-    public int getDesligado() {
-        return desligado;
-    }
-
-    public void setDesligado(int
-     desligado) {
-        this.desligado = desligado;
-    }
-
-
-
-
-
-
+    
 
     
 }
