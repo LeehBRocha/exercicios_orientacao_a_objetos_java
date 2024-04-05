@@ -13,7 +13,6 @@ public class Elevador {
         this.quantidadeAndares = quantidadeAndares;
         this.capacidade = capacidade;
         this.ligado = ligado;
-        
         this.pessoas = 0;
         this.andar = 0;
     }
